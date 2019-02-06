@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/swipe_refresh"
+    tools:context=".Dashboard.EmployeeManagement">
+
+      <RelativeLayout
+          android:id="@+id/employee_parent_layout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+      <RelativeLayout
+          android:id="@+id/toolbarheader"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/employeemanagement_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                android:fitsSystemWindows="true"
+                android:theme="@style/ToolbarTheme">
+            </android.support.v7.widget.Toolbar>
+      </RelativeLayout>
+
+          <android.support.v7.widget.SearchView
+              android:id="@+id/employee_search"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/toolbarheader">
+
+          </android.support.v7.widget.SearchView>
+
+      <RelativeLayout
+          android:layout_below="@+id/employee_search"
+          android:id="@+id/employee_add_edit_layout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:visibility="gone">
+
+  <include layout="@layout/employee_add_dialog"/>
+
+      </RelativeLayout>
+      <TextView
+          android:id="@+id/name_header"
+          android:layout_below="@+id/employee_add_edit_layout"
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize"
+          android:gravity="center|left"
+          android:paddingLeft="8dp"
+          android:textStyle="bold"
+          android:textAllCaps="true"
+          android:textSize="@dimen/text_medium"
+          android:textColor="@color/colorPrimaryDark"
+          android:text="@string/name"/>
+
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/employee_recyclerview"
+    android:layout_below="@+id/name_header"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</android.support.v7.widget.RecyclerView>
+
+
+          <include
+              android:visibility="gone"
+              android:id="@+id/custom_progressbar"
+              layout="@layout/custom_progressbar"/>
+      </RelativeLayout>
+      </android.support.v4.widget.SwipeRefreshLayout>

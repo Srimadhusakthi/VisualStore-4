@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:id="@+id/lensordering_parent_layout"
+    tools:context=".Dashboard.LensOrdering">
+
+    <include
+        android:id="@+id/lensordering_toolbar"
+        layout="@layout/toolbar"/>
+
+
+    <ExpandableListView
+        android:layout_marginTop="@dimen/fab_margin"
+        android:id="@+id/lensordering_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="@dimen/fab_margin"
+        android:background="@color/white"
+        android:visibility="gone"
+        android:layout_below="@+id/lensordering_toolbar">
+    </ExpandableListView>
+
+
+    <ScrollView
+        android:layout_below="@+id/lensordering_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:paddingBottom="100dp">
+
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/customername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/customername"
+            android:textSize="@dimen/text_large"
+            android:textColor="@color/darkgray"
+            android:background="@drawable/custombtn_bg"
+            android:paddingTop="@dimen/text_medium"
+            android:paddingBottom="@dimen/text_medium"
+            android:layout_margin="@dimen/text_medium"
+            android:gravity="center|left"
+            android:paddingLeft="@dimen/text_medium"
+            android:drawableRight="@drawable/ic_angle_arrow_down"
+            android:paddingRight="@dimen/text_vsmall"
+            android:textAllCaps="true"/>
+
+        <RelativeLayout
+            android:id="@+id/customername_layout"
+            android:visibility="gone"
+            android:layout_below="@+id/customername"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include  layout="@layout/activity_customerdata_lensordering"/>
+        </RelativeLayout>
+        
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/refraction"
+            android:layout_below="@+id/customername_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/refraction"
+            android:textSize="@dimen/text_large"
+            android:textColor="@color/darkgray"
+            android:background="@drawable/custombtn_bg"
+            android:paddingTop="@dimen/text_medium"
+            android:paddingBottom="@dimen/text_medium"
+            android:layout_margin="@dimen/text_medium"
+            android:gravity="center|left"
+            android:paddingLeft="@dimen/text_medium"
+            android:drawableRight="@drawable/ic_angle_arrow_down"
+            android:paddingRight="@dimen/text_vsmall"
+            android:textAllCaps="true"/>
+        
+        <RelativeLayout
+            android:layout_below="@+id/refraction"
+            android:id="@+id/refraction_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+            <include layout="@layout/activity_refraction_lensordering"/>
+        </RelativeLayout>
+        
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/lenstypeselection"
+            android:layout_below="@+id/refraction_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lenstypeselection"
+            android:textSize="@dimen/text_large"
+            android:textColor="@color/darkgray"
+            android:background="@drawable/custombtn_bg"
+            android:paddingTop="@dimen/text_medium"
+            android:paddingBottom="@dimen/text_medium"
+            android:layout_margin="@dimen/text_medium"
+            android:gravity="center|left"
+            android:paddingLeft="@dimen/text_medium"
+            android:drawableRight="@drawable/ic_angle_arrow_down"
+            android:paddingRight="@dimen/text_vsmall"
+            android:textAllCaps="true"/>
+
+        <RelativeLayout
+            android:layout_below="@+id/lenstypeselection"
+            android:id="@+id/lenstypeselection_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+            <include layout="@layout/activity_lenstype_lensordering"/>
+        </RelativeLayout>
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/treatments"
+            android:layout_below="@+id/lenstypeselection_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/treatments"
+            android:textSize="@dimen/text_large"
+            android:textColor="@color/darkgray"
+            android:background="@drawable/custombtn_bg"
+            android:paddingTop="@dimen/text_medium"
+            android:paddingBottom="@dimen/text_medium"
+            android:gravity="center|left"
+            android:paddingLeft="@dimen/text_medium"
+            android:drawableRight="@drawable/ic_angle_arrow_down"
+            android:paddingRight="@dimen/text_vsmall"
+            android:textAllCaps="true"
+            android:layout_margin="@dimen/text_medium"
+            />
+
+
+        <RelativeLayout
+            android:layout_below="@+id/treatments"
+            android:id="@+id/treatments_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+            <include layout="@layout/activity_treatments_lensordering"/>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    </ScrollView>
+
+    <include
+        android:visibility="gone"
+        android:id="@+id/custom_progressbar"
+        layout="@layout/custom_progressbar"/>
+</RelativeLayout>

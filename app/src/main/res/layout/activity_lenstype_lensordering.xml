@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/fab_margin">
+
+        <TextView
+            android:id="@+id/portfolio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/portfolio"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_medium"/>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/portfolio_list"
+            android:layout_below="@+id/portfolio"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_xxlarge"
+            android:background="@drawable/rectangle"
+            android:layout_marginTop="@dimen/fab_margin"/>
+
+
+        <TextView
+            android:id="@+id/lenstype_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lenstype"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_below="@+id/portfolio_list"
+            android:textSize="@dimen/text_medium"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/lenstype_list_right"
+            android:layout_below="@+id/lenstype_right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle"
+            android:hint="@string/lenscodeorname"
+            android:layout_marginTop="@dimen/fab_margin"/>
+
+
+
+
+        <TextView
+            android:id="@+id/diameter_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/diameter"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_below="@+id/lenstype_list_right"
+            android:textSize="@dimen/text_medium"/>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/diameter_list_right"
+            android:layout_below="@+id/diameter_right"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_xxlarge"
+            android:background="@drawable/rectangle"
+            android:layout_marginTop="@dimen/fab_margin"/>
+
+
+        <TextView
+            android:id="@+id/lenstype_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lenstype"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_below="@+id/diameter_list_right"
+            android:textSize="@dimen/text_medium"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/lenstype_list_left"
+            android:layout_below="@+id/lenstype_left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle"
+            android:hint="@string/lenscodeorname"
+            android:layout_marginTop="@dimen/fab_margin"/>
+
+
+
+
+        <TextView
+            android:id="@+id/diameter_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/diameter"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_below="@+id/lenstype_list_left"
+            android:textSize="@dimen/text_medium"/>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/diameter_list_left"
+            android:layout_below="@+id/diameter_left"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_xxlarge"
+            android:background="@drawable/rectangle"
+            android:layout_marginTop="@dimen/fab_margin"/>
+
+    </RelativeLayout>
+</RelativeLayout>

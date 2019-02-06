@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dashboard.ContactInformation">
+        <include
+            android:id="@+id/contactinformation_toolbar"
+            layout="@layout/toolbar"/>
+
+        <ScrollView
+            android:layout_below="@+id/contactinformation_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/fab_margin">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/contactinfo_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:maxLines="1"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/email"/>
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/contactinfo_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:maxLines="1"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:hint="@string/phone"/>
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/contactinfo_fax"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:maxLines="1"
+                    android:imeOptions="actionGo"
+                    android:hint="@string/fax"/>
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/chatwithus_contactinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chatwithus"
+                    android:background="@drawable/rippleeffet"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_margin="@dimen/fab_margin"/>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>

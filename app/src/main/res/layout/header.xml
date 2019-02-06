@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_marginTop="50dp">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:textColor="@color/darkgray"
+        android:background="@drawable/custombtn_bg"
+        android:gravity="center"
+        android:text="@string/name"
+        android:textAllCaps="true"
+        android:layout_margin="@dimen/text_vsmall"
+        android:textSize="@dimen/fab_margin" />
+
+</RelativeLayout>

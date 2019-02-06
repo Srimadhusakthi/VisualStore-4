@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dashboard.ShapeBevel">
+
+
+    <include
+        android:id="@+id/shapebevel_toolbar"
+        layout="@layout/toolbar"/>
+<ScrollView
+    android:layout_below="@+id/shapebevel_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/shapebevel_layout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="@dimen/text_vsmall"
+        android:focusable="true"
+        android:background="@drawable/rectangle">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@mipmap/image_spec"/>
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/shapebevel_list"
+        android:layout_below="@+id/shapebevel_layout"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/text_vsmall"
+        android:layout_marginRight="@dimen/text_vsmall"
+        android:focusable="false"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_below="@+id/shapebevel_list"
+        android:id="@+id/shapeorderreview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/custombtn_bg"
+        android:text="@string/orderreview"
+        android:textColor="@color/darkgray"
+        android:layout_margin="@dimen/fab_margin"/>
+    </RelativeLayout>
+</ScrollView>
+</RelativeLayout>

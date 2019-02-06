@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/text_four_dp"
+    android:background="@drawable/rectangle">
+
+    <TextView
+        android:id="@+id/employee_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/fab_margin"
+        android:textSize="@dimen/text_xlarge"/>
+
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/employee_name"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_below="@+id/employee_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:inputType="text"
+        android:background="@drawable/rectangle"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/employee_name_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/employee_name"
+        android:layout_alignStart="@+id/employee_name"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:text="save"
+        android:paddingLeft="@dimen/fab_margin"
+        android:textAllCaps="true" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/employee_name_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/employee_name"
+        android:layout_alignEnd="@+id/employee_name"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:text="Cancel"
+        android:textAllCaps="true" />
+
+
+
+
+</RelativeLayout>

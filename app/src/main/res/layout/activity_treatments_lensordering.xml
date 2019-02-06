@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/fab_margin">
+
+        <TextView
+            android:id="@+id/coating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/coating"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_medium"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/coating_list"
+            android:layout_below="@+id/coating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:hint="@string/shapebevel"
+            />
+
+        <TextView
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_below="@+id/coating_list"
+            android:id="@+id/tint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tint"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_medium"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tint_list"
+            android:layout_below="@+id/tint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle"
+            android:layout_marginTop="@dimen/fab_margin"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_below="@+id/tint_list"
+            android:id="@+id/uvprotect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/uvprotect"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_medium"/>
+
+        <Switch
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_below="@+id/uvprotect"
+            android:id="@+id/uv_protect_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:enabled="false"
+            android:checked="true"
+            android:textSize="@dimen/text_medium"/>
+
+
+        <TextView
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_below="@+id/uv_protect_selected"
+            android:id="@+id/ordertype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ordertype"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_medium"/>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/ordertype_list"
+            android:layout_below="@+id/ordertype"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_xxlarge"
+            android:background="@drawable/rectangle"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginBottom="@dimen/fab_margin"/>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ordertype_list"
+            android:layout_marginTop="@dimen/fab_margin">
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/advancedoption"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/advancedoption"
+                android:background="@drawable/custombtn_bg"
+                android:layout_marginRight="2dp"
+                android:textColor="@color/darkgray"
+                />
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/orderreview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/custombtn_bg"
+                android:text="@string/orderreview"
+                android:textColor="@color/darkgray"
+                android:layout_marginLeft="2dp"/>
+
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/shapebevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/custombtn_bg"
+                android:text="@string/shapebevel"
+                android:textColor="@color/darkgray"
+                android:visibility="gone"
+                android:layout_marginLeft="2dp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

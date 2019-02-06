@@ -1,0 +1,1641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:id="@+id/orderreview_parentlayout"
+    tools:context=".Dashboard.OrderReviewActivity">
+
+    <include
+        android:id="@+id/orderreview_toolbar"
+        layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderreview_toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/orderreview_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/orderreference_layout"
+                >
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_small"
+                    android:text="@string/orderreference"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorPrimaryDark"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="@dimen/text_four_dp"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+                    android:text="@string/colon"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/orderreview_orderreference"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_small"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/text_four_dp"
+                    android:textColor="@color/colorPrimary"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/consumername_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/text_vsmall"
+                android:layout_below="@+id/orderreference_layout"
+                >
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/consumername"
+                    android:textSize="@dimen/text_small"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorPrimaryDark"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="@dimen/text_four_dp"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+                    android:text="@string/colon"/>
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/orderreview_consumername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_small"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/text_four_dp"
+                    android:textColor="@color/colorPrimary"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/consignee_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/text_vsmall"
+                android:layout_below="@+id/consumername_layout"
+                >
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/consignee"
+                    android:textSize="@dimen/text_small"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorPrimaryDark"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="@dimen/text_four_dp"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+                    android:text="@string/colon"/>
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/orderreview_consignee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_small"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/text_four_dp"
+                    android:textColor="@color/colorPrimary"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/employee_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/text_vsmall"
+                android:layout_below="@+id/consignee_layout"
+                >
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/employee"
+                    android:textSize="@dimen/text_small"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/text_two_dp"
+                    android:textColor="@color/colorPrimaryDark"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="@dimen/text_four_dp"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+                    android:text="@string/colon"/>
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/orderreview_employee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_small"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/text_four_dp"
+                    android:textColor="@color/colorPrimary"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ordertype_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/text_vsmall"
+                android:layout_below="@+id/employee_layout"
+                >
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ordertype"
+                    android:textSize="@dimen/text_small"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorPrimaryDark"/>
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="@dimen/text_four_dp"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+                    android:text="@string/colon"/>
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/orderreview_ordertype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_small"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/text_four_dp"
+                    android:textColor="@color/colorPrimary"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+            <View
+                android:id="@+id/orderreview_view"
+                android:layout_below="@+id/orderreview_header"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimaryDark"/>
+
+            <RelativeLayout
+                android:id="@+id/refraction_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fab_margin"
+                android:layout_below="@+id/orderreview_view">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/refraction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="@string/refraction"/>
+
+                <RelativeLayout
+                    android:id="@+id/refraction_first_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fab_margin"
+                    android:layout_below="@+id/refraction">
+
+
+                    <LinearLayout
+                        android:id="@+id/refraction_header_input_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingLeft="@dimen/text_small"
+                            android:paddingRight="@dimen/text_medium"
+                            android:text="@string/r"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:visibility="invisible" />
+
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:text="@string/sphere"
+                            android:layout_marginLeft="@dimen/text_two_dp"
+                            android:layout_weight="1"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:text="@string/cylinder"
+                            android:paddingLeft="@dimen/text_two_dp"
+                            android:layout_weight="1"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:text="@string/axis"
+                            android:paddingLeft="@dimen/text_two_dp"
+                            android:layout_weight="1"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/refraction_header_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_below="@+id/refraction_header_input_layout"/>
+
+                    <LinearLayout
+                        android:id="@+id/refraction_rightside_input_layout"
+                        android:layout_below="@+id/refraction_header_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textAllCaps="true"
+                            android:text="@string/r"
+                            android:layout_gravity="center"
+                            android:paddingLeft="@dimen/text_small"
+                            android:paddingRight="@dimen/text_small"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/refraction_right_sphere"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/refraction_right_cylinder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/refraction_right_axis"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/refraction_rightside_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_below="@+id/refraction_rightside_input_layout"/>
+                    <LinearLayout
+                        android:id="@+id/refraction_leftside_input_layout"
+                        android:layout_below="@+id/refraction_rightside_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textAllCaps="true"
+                            android:text="@string/l"
+                            android:layout_gravity="center"
+                            android:paddingLeft="@dimen/text_small"
+                            android:paddingRight="@dimen/text_msmedium"/>
+
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/refraction_left_sphere"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/refraction_left_cylinder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/refraction_left_axis"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:id="@+id/refraction_leftside_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_below="@+id/refraction_leftside_input_layout"/>
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:id="@+id/refraction_second_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fab_margin"
+                    android:layout_below="@+id/refraction_first_header">
+
+
+                    <LinearLayout
+                        android:id="@+id/refraction_footer_input_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingLeft="@dimen/text_small"
+                            android:paddingRight="@dimen/text_medium"
+                            android:text="@string/r"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:visibility="invisible" />
+
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:text="@string/addition"
+                            android:paddingLeft="@dimen/text_two_dp"
+                            android:layout_weight="1"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:text="@string/resprism"
+                            android:paddingLeft="@dimen/text_two_dp"
+                            android:layout_weight="1"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:text="@string/resbase"
+                            android:paddingLeft="@dimen/text_two_dp"
+                            android:layout_weight="1"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/refraction_footer_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_below="@+id/refraction_footer_input_layout"/>
+
+                    <LinearLayout
+                        android:id="@+id/refraction_rightfooter_input_layout"
+                        android:layout_below="@+id/refraction_footer_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textAllCaps="true"
+                            android:text="@string/r"
+                            android:layout_gravity="center"
+                            android:paddingLeft="@dimen/text_small"
+                            android:paddingRight="@dimen/text_small"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/refraction_right_addition"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/refraction_right_resprism"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/refraction_right_resbase"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/refraction_rightside_footer_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_below="@+id/refraction_rightfooter_input_layout"/>
+                    <LinearLayout
+                        android:id="@+id/refraction_leftfooter_input_layout"
+                        android:layout_below="@+id/refraction_rightside_footer_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textAllCaps="true"
+                            android:text="@string/l"
+                            android:layout_gravity="center"
+                            android:paddingLeft="@dimen/text_small"
+                            android:paddingRight="@dimen/text_msmedium"/>
+
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/refraction_left_addition"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/refraction_left_resprism"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/refraction_left_resbase"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_below="@+id/refraction_leftfooter_input_layout"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/refraction_bottom_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimaryDark"
+                android:layout_below="@+id/refraction_layout"/>
+
+
+            <!--frame data-->
+
+
+            <RelativeLayout
+                android:layout_margin="@dimen/fab_margin"
+                android:layout_below="@+id/refraction_bottom_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/framedata_layout">
+
+
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/framedata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="@string/framedata"/>
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:id="@+id/framedata_header_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/framedata"
+                    android:layout_marginTop="@dimen/fab_margin">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="@dimen/text_small"
+                        android:paddingRight="@dimen/text_medium"
+                        android:text="@string/r"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:visibility="invisible" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/length"
+                        android:paddingLeft="@dimen/text_two_dp"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="@dimen/text_two_dp"
+                        android:text="@string/height"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="@dimen/text_two_dp"
+                        android:text="@string/dbl"/>
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/shapedata"/>
+                </android.support.v7.widget.LinearLayoutCompat>
+
+
+                <View
+                    android:id="@+id/header_framedata_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_below="@+id/framedata_header_layout"/>
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:id="@+id/framedata_right_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/header_framedata_view"
+                   >
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="@dimen/text_small"
+                        android:paddingRight="@dimen/text_small"
+                        android:text="@string/r"
+                        android:textAllCaps="true"
+                        android:textSize="@dimen/text_msmall"
+                        android:textColor="@color/colorPrimaryDark"
+                         />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/framedata_right_length"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_msmall"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/framedata_right_height"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_msmall"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/framedata_right_dbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_msmall"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/framedata_right_shapedata"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/text_msmall"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/text_two_dp"
+                        />
+
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+
+                </android.support.v7.widget.LinearLayoutCompat>
+
+
+                <View
+                    android:id="@+id/framedata_right_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_below="@+id/framedata_right_layout"/>
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:id="@+id/framedata_left_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/framedata_right_layout"
+                    >
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="@dimen/text_small"
+                        android:paddingRight="14.2dp"
+                        android:text="@string/l"
+                        android:textColor="@color/colorPrimaryDark"
+                         />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+
+                        android:id="@+id/framedata_left_length"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_msmall"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/framedata_left_height"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_msmall"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/framedata_left_dbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/text_msmall"
+                        android:gravity="center"
+                        />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/framedata_left_shapedata"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_msmall"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+
+                </android.support.v7.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_below="@+id/framedata_left_layout"/>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/framedata_footer_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fab_margin"
+                android:layout_below="@+id/framedata_layout">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryDark"/>
+
+                <LinearLayout
+                    android:id="@+id/frametype_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/frametype"/>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/frame_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/frametype_bottom_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_below="@+id/frametype_input_layout"/>
+
+                <LinearLayout
+                    android:id="@+id/shapesource_input_layout"
+                    android:layout_below="@+id/frametype_bottom_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/shapesource"/>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/standard"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/shapebevel_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+
+                </LinearLayout>
+                <View
+                    android:id="@+id/standard_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_below="@+id/shapesource_input_layout"/>
+
+
+            </RelativeLayout>
+
+
+            <View
+                android:id="@+id/framedata_footer_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimaryDark"
+                android:layout_below="@+id/framedata_footer_layout"/>
+
+            <!--centration data views-->
+
+            <RelativeLayout
+                android:id="@+id/centrationdata_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/framedata_footer_view"
+                android:layout_margin="@dimen/fab_margin">
+
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/centrationdata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="@string/centrationdata"/>
+
+                <RelativeLayout
+                    android:id="@+id/centrationdata_first_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fab_margin"
+                    android:layout_below="@+id/centrationdata">
+
+
+                    <LinearLayout
+                        android:id="@+id/centrationdata_header_input_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingLeft="@dimen/text_small"
+                            android:paddingRight="@dimen/text_medium"
+                            android:text="@string/r"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:visibility="invisible" />
+
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:text="@string/pdz"
+                            android:paddingLeft="@dimen/text_two_dp"
+                            android:layout_weight="1"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:text="@string/yfh"
+                            android:paddingLeft="@dimen/text_two_dp"
+                            android:layout_weight="1"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:text="@string/bvd"
+                            android:paddingLeft="@dimen/text_two_dp"
+                            android:layout_weight="1"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/centrationdata_header_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_below="@+id/centrationdata_header_input_layout"/>
+
+                    <LinearLayout
+                        android:id="@+id/centrationdata_rightside_input_layout"
+                        android:layout_below="@+id/centrationdata_header_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textAllCaps="true"
+                            android:text="@string/r"
+                            android:layout_gravity="center"
+                            android:paddingLeft="@dimen/text_small"
+                            android:paddingRight="@dimen/text_small"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/centrationdata_right_pdz"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/centrationdata_right_yfh"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/centrationdata_right_bvd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/centrationdata_rightside_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_below="@+id/centrationdata_rightside_input_layout"/>
+                    <LinearLayout
+                        android:id="@+id/centrationdata_leftside_input_layout"
+                        android:layout_below="@+id/centrationdata_rightside_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textAllCaps="true"
+                            android:text="@string/l"
+                            android:layout_gravity="center"
+                            android:paddingLeft="@dimen/text_small"
+                            android:paddingRight="@dimen/text_msmedium"/>
+
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/centrationdata_left_pdz"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/centrationdata_left_yfh"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/centrationdata_left_bvd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"/>
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:id="@+id/centrationdata_leftside_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_below="@+id/centrationdata_leftside_input_layout"/>
+
+            </RelativeLayout>
+            </RelativeLayout>
+
+
+            <View
+                android:id="@+id/centrationdata_footer_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimaryDark"
+                android:layout_below="@+id/centrationdata_layout"/>
+
+
+            <!--LENS TYPE DATA-->
+
+                <RelativeLayout
+                    android:id="@+id/lenstype_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/centrationdata_footer_view"
+                    android:layout_margin="@dimen/fab_margin">
+
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/lenstype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="@string/lenstype"/>
+
+                    <RelativeLayout
+                        android:id="@+id/lenstype_first_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/fab_margin"
+                        android:layout_below="@+id/lenstype">
+
+
+                        <LinearLayout
+                            android:id="@+id/lenstype_header_input_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/rl"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:paddingLeft="@dimen/text_small"
+                                android:paddingRight="@dimen/text_small"
+                                android:text="@string/r"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:visibility="invisible" />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/lenstype_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:text="@string/lenstype"
+                                android:layout_toRightOf="@+id/rl"
+                                android:layout_weight="1"
+                                android:paddingLeft="@dimen/text_two_dp"
+
+                                />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/diamter_txt"
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/lenstype_txt"
+                                android:paddingLeft="@dimen/text_two_dp"
+                                android:text="@string/diameter"
+                                android:textColor="@color/colorPrimaryDark" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/colorPrimaryDark"
+                            android:id="@+id/lenstype_view"
+                            android:layout_below="@+id/lenstype_header_input_layout"/>
+
+                        <LinearLayout
+                            android:layout_below="@+id/lenstype_view"
+                            android:id="@+id/lenstype_right_input_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"/>
+                            <android.support.v7.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:paddingLeft="@dimen/text_small"
+                                android:paddingRight="@dimen/text_msmall"
+                                android:text="@string/r"
+                                android:textColor="@color/colorPrimaryDark"
+                                 />
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"/>
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/lenstype_right_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:layout_toRightOf="@+id/rl"
+                                android:layout_weight="1"
+                                android:paddingLeft="@dimen/text_two_dp"
+
+                                />
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"/>
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/lenstype_right_diamter"
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/lenstype_txt"
+                                android:paddingLeft="@dimen/text_two_dp"
+                                android:textColor="@color/colorPrimaryDark" />
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"/>
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/lenstype_right_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/lenstype_right_input_layout"
+                            android:background="@color/colorPrimaryDark"/>
+
+                        <LinearLayout
+                            android:layout_below="@+id/lenstype_right_view"
+                            android:id="@+id/lenstype_left_input_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"/>
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:paddingLeft="@dimen/text_msmall"
+                                android:paddingRight="@dimen/text_msmedium"
+                                android:text="@string/l"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorPrimaryDark"
+                                 />
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"/>
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/lenstype_left_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:layout_toRightOf="@+id/rl"
+                                android:layout_weight="1"
+                                android:paddingLeft="@dimen/text_two_dp"
+
+                                />
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"/>
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/lenstype_left_diamter"
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/lenstype_txt"
+                                android:paddingLeft="@dimen/text_two_dp"
+                                android:textColor="@color/colorPrimaryDark" />
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"/>
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/lenstype_left_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/colorPrimaryDark"
+                            android:layout_below="@+id/lenstype_left_input_layout"/>
+
+
+                        <RelativeLayout
+                            android:layout_below="@+id/lenstype_left_view"
+                            android:id="@+id/coating_parents_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/text_medium">
+
+                        <View
+                            android:id="@+id/coating_parents_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/colorPrimaryDark"/>
+
+
+                        <LinearLayout
+                            android:layout_below="@+id/coating_parents_view"
+                            android:id="@+id/coating_tint_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"/>
+                            <android.support.v7.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:layout_toRightOf="@+id/rl"
+                                android:layout_weight="1"
+                                android:text="@string/coating"
+                                android:paddingLeft="@dimen/text_two_dp"
+
+                                />
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"/>
+                            <android.support.v7.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/lenstype_txt"
+                                android:paddingLeft="@dimen/text_two_dp"
+                                android:layout_weight="1"
+                                android:text="@string/tint"
+                                android:textColor="@color/colorPrimaryDark" />
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"/>
+                        </LinearLayout>
+
+
+                        <View
+                            android:id="@+id/coating_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/coating_tint_layout"
+                            android:background="@color/colorPrimaryDark"/>
+                        <LinearLayout
+                            android:layout_below="@+id/coating_view"
+                            android:id="@+id/coating_tint_inputlayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"/>
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/lenstype_coating"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:layout_toRightOf="@+id/rl"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:paddingLeft="@dimen/text_two_dp"
+
+                                />
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"/>
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/lenstype_tint"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/lenstype_txt"
+                                android:paddingLeft="@dimen/text_two_dp"
+                                android:layout_weight="1"
+                                android:textColor="@color/colorPrimaryDark" />
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"/>
+                        </LinearLayout>
+
+
+                        <View
+                            android:id="@+id/coating_bottom_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/coating_tint_inputlayout"
+                            android:background="@color/colorPrimaryDark"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                  </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lenstype_layout"
+                android:layout_margin="@dimen/fab_margin"
+                >
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/placeorder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/placeorder"
+                android:background="@drawable/custombtn_bg"
+                android:textColor="@color/darkgray"/>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/storeascompleteorder"
+                android:layout_below="@+id/placeorder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custombtn_bg"
+                android:textColor="@color/darkgray"
+                android:layout_marginTop="@dimen/text_medium"
+                android:text="@string/storeascompleteorder"/>
+
+            <android.support.v7.widget.AppCompatButton
+                android:layout_below="@+id/storeascompleteorder"
+                android:id="@+id/incompleteorders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custombtn_bg"
+                android:textColor="@color/darkgray"
+                android:layout_marginTop="@dimen/text_medium"
+                android:text="@string/incompleteorders"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <include
+        android:visibility="gone"
+        android:id="@+id/custom_progressbar"
+        layout="@layout/custom_progressbar"/>
+</RelativeLayout>

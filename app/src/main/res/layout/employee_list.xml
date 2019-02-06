@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:id="@+id/employee_cardview"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="5dp"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="5dp"
+    android:layout_marginLeft="@dimen/text_two_dp"
+    android:layout_marginRight="@dimen/text_two_dp"
+    android:layout_marginTop="@dimen/text_vsmall">
+
+    <RelativeLayout
+        android:id="@+id/employee_listlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/employee_name"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_below="@+id/toolbarheader"
+            android:gravity="center|left"
+            android:paddingLeft="8dp"
+            android:text="@string/name"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_small" />
+
+        <ImageView
+            android:id="@+id/employee_delete"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/text_vsmall"
+            android:visibility="invisible"
+            app:srcCompat="@android:drawable/ic_menu_delete" />
+
+        <ImageView
+            android:id="@+id/employee_edit"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="40dp"
+            android:visibility="invisible"
+            app:srcCompat="@android:drawable/ic_menu_edit" />
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

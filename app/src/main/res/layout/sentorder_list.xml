@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp"
+    android:layout_marginLeft="@dimen/text_two_dp"
+    android:layout_marginRight="@dimen/text_two_dp"
+    android:layout_marginTop="@dimen/text_vsmall">
+    <LinearLayout
+        android:id="@+id/sentorderlist_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:background="@drawable/orderlistripple">
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/sentorder_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2018-12-15"
+            android:textStyle="normal"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_msmall"
+            android:paddingLeft="2dp"
+            android:maxLength="10"
+            android:layout_gravity="center|left"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/sentorder_ref"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="@dimen/text_msmall"
+            android:text="1234567890"
+            android:layout_weight="1"
+            android:layout_gravity="center|left"
+            />
+        <android.support.v7.widget.AppCompatTextView
+
+            android:id="@+id/sentorder_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="@dimen/text_msmall"
+            android:text="3053857"
+            android:layout_weight="1"
+            android:layout_gravity="center|left"
+            />
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/sentorder_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="@dimen/text_msmall"
+            android:text=""
+            android:layout_weight="1"
+            android:layout_gravity="center|left"
+            />
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

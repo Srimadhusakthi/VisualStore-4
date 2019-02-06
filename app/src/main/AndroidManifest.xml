@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.visualstore"
+    android:versionCode="1"
+    android:versionName="visual">
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon_for_design"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".OnBoarding.SplashScreen"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".OnBoarding.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Dashboard.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Dashboard.Home"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Dashboard.OrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Dashboard.CartActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Dashboard.NewOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Dashboard.ContactInformation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Dashboard.EmployeeManagement"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Dashboard.ChatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Dashboard.LensOrdering"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Dashboard.AdvancedOptionActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Dashboard.OrderReviewActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Dashboard.LensDataSearchList"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Dashboard.ShapeBevel"
+            android:screenOrientation="portrait"></activity>
+    </application>
+
+</manifest>

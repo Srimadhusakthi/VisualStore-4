@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/fab_margin">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/orderreference"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_xxlarge"
+            android:hint="@string/orderreference"
+            android:background="@drawable/rectangle"
+            android:maxLines="1"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+            android:layout_marginTop="@dimen/fab_margin"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/consumecard_btn"
+            android:layout_below="@+id/orderreference"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:background="@drawable/custombtn_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkgray"
+            android:text="@string/consumercard"/>
+
+<RelativeLayout
+    android:id="@+id/consumerdetail_layout"
+    android:layout_below="@+id/consumecard_btn"
+    android:visibility="visible"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/firstname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/firstname"
+            android:background="@drawable/rectangle"
+            android:maxLines="1"
+            android:layout_marginTop="@dimen/fab_margin"/>
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/lastanme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/lastname"
+            android:background="@drawable/rectangle"
+            android:layout_below="@+id/firstname"
+            android:maxLines="1"
+            android:layout_marginTop="@dimen/fab_margin"/>
+
+        <CheckBox
+            android:id="@+id/personaldata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lastanme"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:text="@string/personaldata"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <LinearLayout
+            android:id="@+id/action_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/personaldata"
+            android:layout_marginTop="@dimen/fab_margin">
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/or_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/cancel"
+                android:background="@drawable/custombtn_bg"
+                android:layout_marginRight="2dp"
+                android:textColor="@color/darkgray"
+                />
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/or_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/custombtn_bg"
+                android:text="@string/confirm"
+                android:textColor="@color/darkgray"
+                android:layout_marginLeft="2dp"/>
+
+        </LinearLayout>
+</RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/consignee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/consignee"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_below="@+id/consumerdetail_layout"
+            android:textSize="@dimen/text_medium"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/consignee_list"
+            android:layout_below="@+id/consignee"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_xxlarge"
+            android:background="@drawable/rectangle"
+            android:layout_marginTop="@dimen/fab_margin"/>
+
+        <TextView
+            android:id="@+id/employee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/employee"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:layout_below="@+id/consignee_list"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:textSize="@dimen/text_medium"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/employee_list"
+            android:layout_below="@+id/employee"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_xxlarge"
+            android:background="@drawable/rectangle"
+            android:hint="@string/employeename"
+            android:layout_marginTop="@dimen/fab_margin"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

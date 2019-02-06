@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/order_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/order_toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/order_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ToolbarTheme">
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </RelativeLayout>
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_order_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:layout_below="@+id/order_toolbar_layout"
+        android:background="@color/white">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <android.support.v7.widget.SearchView
+        android:id="@+id/order_searchview"
+        android:layout_width="match_parent"
+        android:queryHint="@string/incompleteorder"
+        android:layout_height="?attr/actionBarSize">
+
+    </android.support.v7.widget.SearchView>
+    <View
+        android:layout_below="@+id/order_searchview"
+        android:id="@+id/orderview"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"/>
+
+    <LinearLayout
+        android:id="@+id/order_header"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:padding="@dimen/text_vsmall"
+        android:visibility="invisible"
+        android:layout_below="@+id/orderview">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_small"
+            android:layout_marginLeft="2dp"
+            android:layout_gravity="center|left"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_small"
+            android:text="@string/orderreference"
+            android:layout_weight="1"
+            android:layout_gravity="center|left"
+            />
+        <android.support.v7.widget.AppCompatTextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_small"
+            android:text="@string/status"
+            android:layout_weight="1"
+            android:layout_gravity="center|left"
+            />
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_small"
+            android:text="@string/consumername"
+            android:layout_weight="1"
+            android:layout_gravity="center|left"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sentorder_header"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:padding="@dimen/text_vsmall"
+        android:visibility="gone"
+        android:layout_below="@+id/orderview">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_small"
+            android:layout_marginLeft="2dp"
+            android:layout_gravity="center|left"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_small"
+            android:text="@string/orderref"
+            android:layout_weight="1"
+            android:layout_gravity="center|left"
+            />
+        <android.support.v7.widget.AppCompatTextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_small"
+            android:text="@string/orderno"
+            android:layout_weight="1"
+            android:layout_gravity="center|left"
+            />
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_small"
+            android:text="@string/status"
+            android:layout_weight="1"
+            android:layout_gravity="center|left"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_below="@+id/order_header"
+        android:id="@+id/orderview_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/order_recyclerview"
+        android:layout_below="@+id/orderview_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="@dimen/text_four_dp">
+    </android.support.v7.widget.RecyclerView>
+
+        </RelativeLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+    <include
+        android:visibility="gone"
+        android:id="@+id/custom_progressbar"
+        layout="@layout/custom_progressbar"/>
+</RelativeLayout>

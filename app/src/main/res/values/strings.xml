@@ -1,0 +1,208 @@
+<resources>
+    <string name="app_name">Visu Store</string>
+    <string name="title_activity_login">Sign in</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password </string>
+    <string name="username">User Name</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_login_short">LOGIN</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Admin</string>
+    <string name="nav_header_mobile">999999999</string>
+    <string name="nav_header_subtitle">admin@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Login Activity-->
+    <string name="welcomeback">welcome back,</string>
+    <string name="signintocontinue">Sign in to Continue</string>
+    <string name="invalid_username">Please enter a valid user name</string>
+    <string name="invalid_email">Please enter a valid email</string>
+    <string name="invalid_password">Please enter a valid password</string>
+
+
+    <!--LeftDrawer Title text-->
+    <string name="home">HOME</string>
+    <string name="lensordering">LENS ORDERING</string>
+    <string name="lensorder">LENS ORDER</string>
+    <string name="myorder">MY ORDER</string>
+    <string name="cart">CART</string>
+    <string name="sentorder">SENT ORDER</string>
+    <string name="setting">SETTING</string>
+    <string name="employeemanagement">EMPLOYEE MANAGEMENT</string>
+    <string name="contactinformation">CONTACT INFORMATION</string>
+    <string name="myaccount">MY ACCOUNT</string>
+    <string name="title_activity_home">Home</string>
+    <string name="logout">LOGOUT</string>
+
+    <!--DashBoard Screen Texts-->
+    <string name="neworder">New Order</string>
+    <string name="incompleteorder">Incomplete Orders</string>
+    <string name="completeorder">Complete Orders</string>
+    <string name="searchorderreferenceid">Search Order Reference Id</string>
+    <string name="incomplete">Incomplete </string>
+    <string name="complete">Complete </string>
+    <string name="loading">Loading...</string>
+    <string name="downloading">Downloading...</string>
+
+    <!--Order List-->
+    <string name="date">Date</string>
+    <string name="orderid">Order Id</string>
+    <string name="status">Status</string>
+    <string name="consumername">Consumer Name</string>
+    <string name="orderref">Order ref.</string>
+    <string name="orderno">Order no</string>
+    <string name="yourorder">your order</string>
+
+    <!--Employee Management-->
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="fax">Fax</string>
+    <string name="name">Name</string>
+    <string name="chatwithus">Chat With US</string>
+
+
+    <!--Lens Ordering-->
+    <string name="customerdata">Customer Data</string>
+    <string name="orderreference">Order Reference</string>
+    <string name="consumercard">Consumer Card</string>
+    <string name="consignee">Consignee</string>
+    <string name="employee">Employee</string>
+    <string name="employeename">Employee Name</string>
+    <string name="firstname">First Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="personaldata">The customer has confirmed to submit his personal data.</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="plsenter">Please enter a</string>
+    <string name="plscheck">Please check the  checkbox</string>
+    <string name="visioncenter">Vision Center</string>
+    <!--refraction-->
+    <string name="refraction">Refraction</string>
+    <string name="single">Single</string>
+    <string name="both">Both</string>
+    <string name="sphere">Sphere</string>
+    <string name="cylind">Cylind</string>
+    <string name="axis">Axis</string>
+    <string name="addition">Addition</string>
+    <string name="r">R</string>
+    <string name="l">L</string>
+    <string name="point">0.25</string>
+    <string name="spherevaluessteps">Values from -20 to 23 in 0.25 steps</string>
+    <string name="cylindvaluessteps">Values from -10 to 10 in 0.25 steps</string>
+    <string name="axisvaluessteps">Values from 0 to 100 in 1 steps</string>
+    <string name="additionvaluessteps">Values from 0.5 to 4 in 0.01 steps</string>
+
+    <string name="value_sphere">Value from -20 to 23 in 0.25 steps</string>
+    <string name="value_cylind">Value from -10 to 10 in 0.25 steps</string>
+    <string name="value_axis">Value from 0 to 180 in 1 steps</string>
+    <string name="value_addition">Value from 0.5 to 4 in 0.01 steps</string>
+
+    <string name="spherenotinrange">Sphere not in range</string>
+    <string name="cylindnotinrange">Cylind not in range</string>
+    <string name="axisnotinrange">Axis not in range</string>
+    <string name="additionnotinrange">Addition not in range</string>
+    <!--Lens Type Selection-->
+    <string name="lenstypeselection">Lens Type Selection</string>
+    <string name="portfolio">Portfolio</string>
+    <string name="lenstype">Lens Type</string>
+    <string name="diameter">Diameter</string>
+    <string name="zeiss">ZEISS</string>
+    <string name="synchrony">SYNCHRONY</string>
+    <string name="lenscodeorname">Type lens code or name</string>
+
+    <!--Treatments-->
+    <string name="treatments">Treatments</string>
+    <string name="coating">Coating</string>
+    <string name="tint">Tint</string>
+    <string name="select">Select</string>
+    <string name="uvprotect">UV Protect</string>
+    <string name="ordertype">Order Type</string>
+    <string name="glazing">GLAZING</string>
+    <string name="advancedoption">Advanced Option</string>
+    <string name="orderreview">Order Review</string>
+    <string name="uncut">UNCUT</string>
+
+
+    <!--AdvancedOption-->
+    <string name="indivijuallensdata">Individual Lens Data</string>
+    <string name="pantoangle">Panto. angle</string>
+    <string name="framefit">Frame Fit</string>
+    <string name="bowangle">Bow angle</string>
+    <string name="distancenear">Distance near</string>
+    <string name="neartype">Near Type</string>
+    <string name="mid">MID</string>
+    <string name="indivijualengrav">Indiv engrav.</string>
+    <string name="metal">METAL</string>
+    <string name="plastic">PLASTIC</string>
+    <string name="nylor">NYLOR</string>
+    <string name="rimless">RIMLESS</string>
+    <string name="frame">FRAME</string>
+    <!--framedata-->
+    <string name="framedata">Frame Data</string>
+    <string name="framelength">Frame Length</string>
+    <string name="frameheight">Frame Height</string>
+    <string name="dbl">DBL</string>
+    <!--cetr-->
+    <string name="centrationdata">Centration Data</string>
+    <string name="pdz">PD/z</string>
+    <string name="yfh">y(FH)</string>
+    <string name="bvd">BVD</string>
+    <!--Order Review-->
+    <string name="customername">Customer Name</string>
+    <string name="resprism">Res.Prism</string>
+    <string name="resbase">Res.Base</string>
+    <string name="shapedata">Shape Data</string>
+    <string name="frametype">Frame Type</string>
+    <string name="shapesource">Shape Source</string>
+    <string name="standard">Standard</string>
+    <string name="colon">:</string>
+    <string name="cylinder">Cylinder</string>
+    <string name="length">Length</string>
+    <string name="height">Height</string>
+    <string name="placeorder">Place Order</string>
+    <string name="storeascompleteorder">Store as Complete Order</string>
+    <string name="incompleteorders">InComplete Order</string>
+    <string name="shapebevel">Shape &amp; Bevel</string>
+    <string name="pleaseselect">Please select</string>
+
+
+
+    <string name="panto_notinrange">Pantoscopic angle is not in range.</string>
+    <string name="bow_notinrange">Bow angle is not in range.</string>
+    <string name="pdz_notinrange">PD/z is not in range.</string>
+    <string name="yfh_notinrange">y (FH) is not in range.</string>
+    <string name="framelength_notinrange">Frame length is not in range.</string>
+    <string name="frameHeight_notinrange">Frame height is not in range.</string>
+    <string name="dbl_notinrange">DBL is not in range.</string>
+    <string name="bvd_notinrange">bvd is not in range.</string>
+
+    <string name="values_panto">Value from -20 to 30 in 0.1 steps.</string>
+    <string name="values_pdz_yfh">Value from 0 to 50 in 0.1 steps.</string>
+    <string name="values_framelength">Value from 30 to 80 in 0.01 steps.</string>
+    <string name="values_frameheight">Value from 15 to 65 in 0.01 steps.</string>
+    <string name="values_dbl">Value from 0.1 to 40 in 0.1 steps.</string>
+
+    <!--Internet Connection-->
+    <string name="interntconnectionalert">Plese check your connection</string>
+
+    <!--Employee-->
+    <string name="employeenamenotempty">Employee name should not be empty</string>
+    <string name="noitemselected">No Item Selected!</string>
+
+    <!--delete-->
+    <string name="thisorder">this order</string>
+    <string name="searchtheemployee">Search the employee</string>
+    <string name="areyousurewanttologout">Are you sure want to logout? </string>
+    <string name="areyousurewanttodelete">Are you sure want to delete </string>
+</resources>
