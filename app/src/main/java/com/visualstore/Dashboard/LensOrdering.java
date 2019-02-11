@@ -270,6 +270,7 @@ public class LensOrdering extends BaseActivity  {
         onRefraction();
         onRefractionBoth();
         Sharedpreference.onStorePreferences(activity,Sharedpreference.both_single,"both");
+        BaseActivity.mLensRefractiontxt = "both";
     }
         mCoating_list.setHint(getResources().getString(R.string.select) + " " + getResources().getString(R.string.coating));
         mTint_list.setHint(getResources().getString(R.string.select) + " " + getResources().getString(R.string.tint));
@@ -685,27 +686,23 @@ public class LensOrdering extends BaseActivity  {
         mAdapter = new CustomOrderAdapter(activity,R.layout.custom_lensorder_txt,mLensPortfolioList);
         mPortfolio_list.setAdapter(mAdapter);
         Sharedpreference.onStorePreferences(activity,Sharedpreference.cutom_id,"1");
-        if(!Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_selected_portfolio_id,"").isEmpty()){
-            int value =  Integer.parseInt(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_selected_portfolio_id,""));
-            if(value == 1){
-                mPortfolio_list.setSelection(0);
+        if(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_selected_portfolio_name,"").equals(getResources().getString(R.string.zeiss))){
+                 mPortfolio_list.setSelection(0);
             }else {
                 mPortfolio_list.setSelection(1);
             }
-        }else{
 
-        }
         mPortfolio_list.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position)
                 {
                     case 0:
-                        Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_selected_portfolio_id,"0");
+//                        Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_selected_portfolio_id,"0");
                         Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_selected_portfolio_name,getResources().getString(R.string.zeiss));
                         break;
                     case 1:
-                        Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_selected_portfolio_id,"1");
+//                        Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_selected_portfolio_id,"1");
                         Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_selected_portfolio_name,getResources().getString(R.string.synchrony));
                         break;
                     default:
@@ -713,11 +710,11 @@ public class LensOrdering extends BaseActivity  {
                 }}
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_selected_portfolio_id,"0");
+//                Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_selected_portfolio_id,"0");
                 Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_selected_portfolio_name,getResources().getString(R.string.zeiss));
             }
         });
-    }
+     }
 
 
 
@@ -727,7 +724,7 @@ public class LensOrdering extends BaseActivity  {
             mLensOrderRightDiamterList.clear();
         if(!Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typename_right,"").isEmpty() &&
                 Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_right, "").contains("Finished")
-                || Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_left, "").contains("FSV")) {
+                || Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_right, "").contains("FSV")) {
 
             mLensOrderRightDiamterList.add(new LensOrderModel("65", "2"));
             mLensOrderRightDiamterList.add(new LensOrderModel("70", "3"));
@@ -741,8 +738,14 @@ public class LensOrdering extends BaseActivity  {
                 mLensOrderRightDiamterList.add(new LensOrderModel("70", "3"));
                 mLensOrderRightDiamterList.add(new LensOrderModel("75", "4"));
             }
-        mAdapter = new CustomOrderAdapter(activity,R.layout.custom_lensorder_txt,mLensOrderRightDiamterList);
-        mDiameter_list_right.setAdapter(mAdapter);
+
+            mAdapter = new CustomOrderAdapter(activity,R.layout.custom_lensorder_txt,mLensOrderRightDiamterList);
+            mDiameter_list_right.setAdapter(mAdapter);
+
+
+
+
+
         if(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_diameter_id_right,"").isEmpty()){
         }else{
             int i = Integer.parseInt(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_diameter_id_right,""));
@@ -761,8 +764,16 @@ public class LensOrdering extends BaseActivity  {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+//                if( Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_right, "").contains("Finished") ||
+//                        Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_right, "").contains("FSV")){
+//                    mDiameter_list_right.setSelection(2);
+//                }else{
+//                    mDiameter_list_right.setSelection(0);
+//                }
+
                 onDiameterLeft();
-                mDiameter_list_right.setSelection(0);
+
+
             }
         });
     }
@@ -808,7 +819,12 @@ public class LensOrdering extends BaseActivity  {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
-                mDiameter_list_left.setSelection(0);
+                if( Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_left, "").contains("Finished") ||
+                        Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_left, "").contains("FSV")){
+                    mDiameter_list_left.setSelection(2);
+                 }else{
+                    mDiameter_list_left.setSelection(0);
+                }
             }
         });
     }
@@ -818,7 +834,9 @@ public class LensOrdering extends BaseActivity  {
     private void onDiameterLeftAlone(){
         mLensOrderLefttDiamterList = new ArrayList<LensOrderModel>();
         mLensOrderLefttDiamterList.clear();
-        if(!Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typename_left,"").isEmpty() && Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_left, "").contains("Finished")) {
+        if(!Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typename_left,"").isEmpty() &&
+                Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_left, "").contains("Finished") ||
+                Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_left, "").contains("FSV")) {
 
             mLensOrderLefttDiamterList.add(new LensOrderModel("65", "2"));
             mLensOrderLefttDiamterList.add(new LensOrderModel("70", "3"));
@@ -854,7 +872,9 @@ public class LensOrdering extends BaseActivity  {
     private void onDiameterEditLeft(){
         mLensOrderLefttDiamterList = new ArrayList<LensOrderModel>();
         mLensOrderLefttDiamterList.clear();
-        if(!Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typename_left,"").isEmpty() && Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_left, "").contains("Finished")) {
+        if(!Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typename_left,"").isEmpty() &&
+                Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_left, "").contains("Finished") ||
+                Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_left, "").contains("FSV")) {
             mLensOrderLefttDiamterList.add(new LensOrderModel("65", "0"));
             mLensOrderLefttDiamterList.add(new LensOrderModel("70", "1"));
             mLensOrderLefttDiamterList.add(new LensOrderModel("75", "2"));
@@ -892,78 +912,6 @@ public class LensOrdering extends BaseActivity  {
             }
         });
     }
-
-
-//    private void onDiameterFinishRight(){
-//        mLensOrderLefttDiamterList = new ArrayList<LensOrderModel>();
-//        mLensOrderLefttDiamterList.clear();
-//        mLensOrderLefttDiamterList.add(new LensOrderModel("65","0"));
-//        mLensOrderLefttDiamterList.add(new LensOrderModel("70","1"));
-//        mLensOrderLefttDiamterList.add(new LensOrderModel("75","2"));
-//        mAdapter = new CustomOrderAdapter(activity,R.layout.custom_lensorder_txt,mLensOrderLefttDiamterList);
-//        mDiameter_list_right.setAdapter(mAdapter);
-//        if(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_diameter_id_right,"").isEmpty()){
-//
-//        }else{
-//            int i = Integer.parseInt(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_diameter_id_right,""));
-//            mDiameter_list_right.setSelection(i);
-//        }
-//        Sharedpreference.onStorePreferences(activity,Sharedpreference.cutom_id,"2");
-//        mDiameter_list_right.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                onDiameterFinishLeft(position);
-//                Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_diameter_id_right,mLensOrderLefttDiamterList.get(position).getId());
-//                Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_diameter_name_right,mLensOrderLefttDiamterList.get(position).getmName());
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-//
-//    }
-
-
-
-
-//    private void onDiameterFinishLeft(int i){
-//        mLensOrderLefttDiamterList = new ArrayList<LensOrderModel>();
-//        mLensOrderLefttDiamterList.clear();
-//        mLensOrderLefttDiamterList.add(new LensOrderModel("65","0"));
-//        mLensOrderLefttDiamterList.add(new LensOrderModel("70","1"));
-//        mLensOrderLefttDiamterList.add(new LensOrderModel("75","2"));
-//        mAdapter = new CustomOrderAdapter(activity,R.layout.custom_lensorder_txt,mLensOrderLefttDiamterList);
-//        mDiameter_list_left.setAdapter(mAdapter);
-//        if(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_diameter_id_left,"").isEmpty()){
-//
-//        }else{
-//            int position = Integer.parseInt(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_diameter_id_left,""));
-//            mDiameter_list_left.setSelection(position);
-//        }
-//
-//        Sharedpreference.onStorePreferences(activity,Sharedpreference.cutom_id,"2");
-//        mDiameter_list_left.setSelection(i);
-//        if(mLensRefractiontxt.equals("both")) {
-//            Sharedpreference.onStorePreferences(activity, Sharedpreference.lens_diameter_id_left, mLensOrderLefttDiamterList.get(i).getId());
-//            Sharedpreference.onStorePreferences(activity, Sharedpreference.lens_diameter_name_left, mLensOrderLefttDiamterList.get(i).getmName());
-//        }
-//        mDiameter_list_left.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_diameter_id_left,mLensOrderLefttDiamterList.get(position).getId());
-//                Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_diameter_name_left,mLensOrderLefttDiamterList.get(position).getmName());
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-//    }
-
-
 
     private void onOrderList(){
         mLensOrderTypeList = new ArrayList<LensOrderModel>();
@@ -1092,11 +1040,12 @@ public class LensOrdering extends BaseActivity  {
     /*Treatment*/
     @OnClick(R.id.coating_list)
     protected  void onCoatingtype(){
-
         if(Sharedpreference.getSharedprefernce(activity,Sharedpreference.mlens_coating_id,"").isEmpty()){
             onSnackBar(mLensordering_parent_layout,getResources().getString(R.string.pleaseselect) +" " + getResources().getString(R.string.lenstype));
         } else  if(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typename_right,"").contains("Finished") ||
-                Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typename_left,"").contains("Finished")){
+                Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typename_left,"").contains("Finished") ||
+                Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typename_right,"").contains("FSV") ||
+                Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typename_left,"").contains("FSV")){
         } else {
             startActivity(new Intent(activity, LensDataSearchList.class));
             Sharedpreference.onStorePreferences(activity, Sharedpreference.lens_type_act, "3");
@@ -1431,7 +1380,9 @@ public class LensOrdering extends BaseActivity  {
 
     private void onCoating(){
         if(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typename_right,"").contains("Finished") ||
-                Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typename_left,"").contains("Finished")) {
+                Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typename_left,"").contains("Finished")
+         ||  Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_right, "").contains("FSV") ||
+        Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_left, "").contains("FSV")) {
             mRetroservice.getCoatingCode(Sharedpreference.getSharedprefernce(activity, Sharedpreference.mlens_coating_id, "")).subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(new Observer<CoatingTintModel>() {
@@ -1577,11 +1528,6 @@ public class LensOrdering extends BaseActivity  {
                 Sharedpreference.onStorePreferences(activity, Sharedpreference.orderreference, obj.optString("order_reference"));
                 Sharedpreference.onStorePreferences(activity, Sharedpreference.lens_selected_portfolio_name, obj.optString("portfolio"));
 
-                if (obj.optString("portfolio").contains("Zeiss") || obj.optString("portfolio").contains("0")) {
-                    Sharedpreference.onStorePreferences(activity, Sharedpreference.lens_selected_portfolio_id, "0");
-                } else {
-                    Sharedpreference.onStorePreferences(activity, Sharedpreference.lens_selected_portfolio_id, "1");
-                }
                 Sharedpreference.onStorePreferences(activity, Sharedpreference.mEmployeeName, obj.optString("employee_name"));
                 Sharedpreference.onStorePreferences(activity, Sharedpreference.personaldata, obj.optString("patient_term"));
                 mPersonal = obj.optString("patient_term");
@@ -1609,6 +1555,7 @@ public class LensOrdering extends BaseActivity  {
                 String arr = obj.optString("lens_lr_lens").toUpperCase();
                 if (arr.contains("[R, L]")) {
                     BaseActivity.mLensRefractiontxt = "both";
+                    Sharedpreference.onStorePreferences(activity,Sharedpreference.both_single,"both");
                     mRightside.setChecked(true);
                     mLeftside.setChecked(true);
                     mRightside.setEnabled(false);
@@ -1626,6 +1573,8 @@ public class LensOrdering extends BaseActivity  {
                     Sharedpreference.onStorePreferences(activity,Sharedpreference.neartype,obj.optString("near_type"));
                 } else if (arr.contains("[R]")) {
                     BaseActivity.mLensRefractiontxt = "right";
+                    Sharedpreference.onStorePreferences(activity,Sharedpreference.both_single,"single");
+                    Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_typename_id,"2");
                     mRightside.setChecked(true);
                     mRightside.setEnabled(true);
                     mLeftside.setEnabled(true);
@@ -1639,6 +1588,8 @@ public class LensOrdering extends BaseActivity  {
 
                 } else if(arr.contains("[L]")) {
                     BaseActivity.mLensRefractiontxt = "left";
+                    Sharedpreference.onStorePreferences(activity,Sharedpreference.both_single,"single");
+                    Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_typename_id,"1");
                     mLeftside.setChecked(true);
                     mLeftside.setEnabled(true);
                     mRightside.setEnabled(true);
@@ -1739,7 +1690,9 @@ public class LensOrdering extends BaseActivity  {
 
 
                 if (Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_right, "").contains("Finished") ||
-                        Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_left, "").contains("Finished")) {
+                        Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_left, "").contains("Finished") ||
+                        Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_right, "").contains("FSV") ||
+                        Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_typename_left, "").contains("FSV")) {
 
                     if (Sharedpreference.getSharedprefernce(activity, Sharedpreference.lens_diameter_name_right, "").equals("65")) {
                         Sharedpreference.onStorePreferences(activity, Sharedpreference.lens_diameter_id_right, "0");
@@ -1788,7 +1741,7 @@ public class LensOrdering extends BaseActivity  {
                 mLenstype_list_right.setText(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typename_right,""));
                 mLenstype_list_left.setText(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typename_left,""));
                 mCoating_list.setText(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_coatingcode,""));
-                mTint_list.setText(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_tintdisplay_name,""));
+                mTint_list.setText(obj.optString("coating_commercialTintName"));
                 Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_individual,obj.optString("Indiv_Val"));
                 onDataValues();
                 onPortfolioList();
