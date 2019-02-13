@@ -50,15 +50,19 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderAdapter
         orderAdapterHolder.mOrderDate.setText(orderList.getOrder_date());
         orderAdapterHolder.mOrderId.setText(orderList.getOrder_id());
 
-//        try {
+        try {
         if(orderList.getConsumer_name().equals("FirstName LastName")){
             orderAdapterHolder.mOrderConsumerName.setText("");
-        }else {
+        }
+        else  if(orderList.getConsumer_name() == null){
+            orderAdapterHolder.mOrderConsumerName.setText("--");
+        }
+        else {
             orderAdapterHolder.mOrderConsumerName.setText(orderList.getConsumer_name());
         }
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         Log.d("ORDERADA",orderList.getStatus() +"----" + mOrderList.size() +"====="+ mFilterOrderList.size());
         if(orderList.getStatus().equals("1")){
             orderAdapterHolder.mOrderStatus.setText(mActivity.getResources().getString(R.string.incomplete));

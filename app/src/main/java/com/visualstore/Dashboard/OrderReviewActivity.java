@@ -173,7 +173,6 @@ public class OrderReviewActivity extends BaseActivity {
         mActivity = OrderReviewActivity.this;
         onOrderReviewToolbar();
         onIntializeValue();
-
     }
 
 
@@ -340,8 +339,8 @@ public class OrderReviewActivity extends BaseActivity {
         placeOrderModel.setCoating_commercialCode(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_coatingcode,""));
         placeOrderModel.setCoating_commercialType(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_coatingtype,""));
         placeOrderModel.setCoating_commercialTint(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_tintcode,""));
-        placeOrderModel.setCoating_commercialCodeName(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_coatingcode,""));
-        placeOrderModel.setCoating_commercialTintName(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_tintdisplay_name,""));
+        placeOrderModel.setCoating_commercialCodeName(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_coatingname,""));
+        placeOrderModel.setCoating_commercialTintName(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_tintname,""));
 
         placeOrderModel.setPortfolio(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_selected_portfolio_name,""));
         placeOrderModel.setEmployee_name(Sharedpreference.getSharedprefernce(activity,Sharedpreference.mEmployeeName,""));

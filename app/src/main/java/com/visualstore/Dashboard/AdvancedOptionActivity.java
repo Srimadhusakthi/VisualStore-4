@@ -64,7 +64,6 @@ public class AdvancedOptionActivity extends BaseActivity {
 
     private CustomOrderAdapter mFrameAdapter;
 
-
     @BindView(R.id.framelength_right)
     protected AppCompatEditText mFramelength_right;
 
@@ -86,7 +85,6 @@ public class AdvancedOptionActivity extends BaseActivity {
     private String mFrameid = "";
 
     /*centration data*/
-
     @BindView(R.id.pdz_right)
     protected AppCompatEditText mPdz_right;
 
@@ -105,7 +103,6 @@ public class AdvancedOptionActivity extends BaseActivity {
     @BindView(R.id.bvd_left)
     protected AppCompatEditText mBvd_left;
 
-
     @BindView(R.id.indijual_valuessteps)
     protected TextView mIndijual_valuessteps;
 
@@ -117,7 +114,6 @@ public class AdvancedOptionActivity extends BaseActivity {
 
     @BindView(R.id.framedata_error_txt)
     protected TextView mFramedata_error_txt;
-
 
     @BindView(R.id.centrationdata_valuessteps)
     protected TextView mCentrationdata_valuessteps;
@@ -252,7 +248,8 @@ public class AdvancedOptionActivity extends BaseActivity {
                 onSnackBar(mAdvancedoption_parent_layout, getResources().getString(R.string.plsenter) + " " + getResources().getString(R.string.framelength));
             } else if (mFrameheight_left.getText().toString().isEmpty()) {
                 onSnackBar(mAdvancedoption_parent_layout, getResources().getString(R.string.plsenter) + " " + getResources().getString(R.string.frameheight));
-            } else {
+            }
+            else {
                 onUploadValues();
             }
         } else if(BaseActivity.mLensRefractiontxt.equals("right")) {
@@ -317,18 +314,55 @@ public class AdvancedOptionActivity extends BaseActivity {
             Sharedpreference.onStorePreferences(activity, Sharedpreference.frame_type, mFrameType);
             Sharedpreference.onStorePreferences(activity, Sharedpreference.frame_type_id, mFrameid);
         }
-        Sharedpreference.onStorePreferences(activity,Sharedpreference.frame_length_r,mFramelength_right.getText().toString().trim());
-        Sharedpreference.onStorePreferences(activity,Sharedpreference.frame_length_l,mFramelength_left.getText().toString().trim());
-        Sharedpreference.onStorePreferences(activity,Sharedpreference.frame_height_r,mFrameheight_right.getText().toString().trim());
-        Sharedpreference.onStorePreferences(activity,Sharedpreference.frame_height_l,mFrameheight_left.getText().toString().trim());
-        Sharedpreference.onStorePreferences(activity,Sharedpreference.DBL_right,mDbl_right.getText().toString().trim());
-        Sharedpreference.onStorePreferences(activity,Sharedpreference.DBL_left,mDbl_left.getText().toString().trim());
-        Sharedpreference.onStorePreferences(activity,Sharedpreference.PDZ_right,mPdz_right.getText().toString().trim());
-        Sharedpreference.onStorePreferences(activity,Sharedpreference.PDZ_left,mPdz_left.getText().toString().trim());
-        Sharedpreference.onStorePreferences(activity,Sharedpreference.YFH_right,mYfh_right.getText().toString().trim());
-        Sharedpreference.onStorePreferences(activity,Sharedpreference.YFH_left,mYfh_left.getText().toString().trim());
-        Sharedpreference.onStorePreferences(activity,Sharedpreference.bvd_right,mBvd_right.getText().toString().trim());
-        Sharedpreference.onStorePreferences(activity,Sharedpreference.bvd_left,mBvd_left.getText().toString().trim());
+
+
+
+
+        if(BaseActivity.mLensRefractiontxt.equals("both")) {
+
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.frame_length_r,mFramelength_right.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.frame_height_r,mFrameheight_right.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.DBL_right,mDbl_right.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.PDZ_right,mPdz_right.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.YFH_right,mYfh_right.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.bvd_right,mBvd_right.getText().toString().trim());
+
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.frame_length_l,mFramelength_right.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.frame_height_l,mFrameheight_right.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.DBL_left,mDbl_right.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.PDZ_left,mPdz_right.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.YFH_left,mYfh_right.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.bvd_left,mBvd_right.getText().toString().trim());
+
+        }else  if(BaseActivity.mLensRefractiontxt.equals("right")){
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.frame_length_r,mFramelength_right.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.frame_height_r,mFrameheight_right.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.DBL_right,mDbl_right.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.PDZ_right,mPdz_right.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.YFH_right,mYfh_right.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.bvd_right,mBvd_right.getText().toString().trim());
+
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.frame_length_l,"");
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.frame_height_l,"");
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.DBL_left,"");
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.PDZ_left,"");
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.YFH_left,"");
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.bvd_left,"");
+        } else if(BaseActivity.mLensRefractiontxt.equals("left")){
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.frame_length_l,mFramelength_left.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.frame_height_l,mFrameheight_left.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.DBL_left,mDbl_left.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.PDZ_left,mPdz_left.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.YFH_left,mYfh_left.getText().toString().trim());
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.bvd_left,mBvd_left.getText().toString().trim());
+
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.frame_length_r,"");
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.frame_height_r,"");
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.DBL_right,"");
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.PDZ_right,"");
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.YFH_right,"");
+            Sharedpreference.onStorePreferences(activity,Sharedpreference.bvd_right,"");
+        }
 
         activity.finish();
     }
@@ -370,14 +404,12 @@ public class AdvancedOptionActivity extends BaseActivity {
         if(side.equals("right")) {
             
             /*Validation for only Right*/
-
             mFramelength_right.setOnFocusChangeListener(new RangesDisplay1(activity,mFramedata_valuessteps, R.string.values_framelength,mFramelength_right,mFramelength_right, 30.0,80.0,mFramedata_error_txt,R.string.framelength_notinrange));
             mFrameheight_right.setOnFocusChangeListener(new RangesDisplay1(activity,mFramedata_valuessteps, R.string.values_frameheight,mFrameheight_right,mFrameheight_right, 15.0,65.0,mFramedata_error_txt,R.string.frameHeight_notinrange));
             mDbl_right.setOnFocusChangeListener(new RangesDisplay1(activity,mFramedata_valuessteps, R.string.values_dbl,mDbl_right,mDbl_right, 0.1,40.0,mFramedata_error_txt,R.string.dbl_notinrange));
             mPdz_right.setOnFocusChangeListener(new RangesDisplay1(activity,mCentrationdata_valuessteps, R.string.values_pdz_yfh,mPdz_right,mPdz_right, 0.0,50.0,mCentrationdata_error_txt,R.string.pdz_notinrange));
             mYfh_right.setOnFocusChangeListener(new RangesDisplay1(activity,mCentrationdata_valuessteps, R.string.values_pdz_yfh,mYfh_right,mYfh_right, 0.0,50.0,mCentrationdata_error_txt,R.string.yfh_notinrange));
             mBvd_right.setOnFocusChangeListener(new RangesDisplay1(activity,mCentrationdata_valuessteps, R.string.values_pdz_yfh,mBvd_right,mBvd_right, 0.0,50.0,mCentrationdata_error_txt,R.string.bvd_notinrange));
-
 
             mFramelength_right.setOnEditorActionListener(new Validation1(activity, mFramelength_right, mFrameheight_right, mFramelength_right, 30.0, 80.0,mFramedata_error_txt,R.string.framelength_notinrange));
             mFrameheight_right.setOnEditorActionListener(new Validation1(activity, mFrameheight_right, mDbl_right, mFrameheight_right, 15.0, 65.0,mFramedata_error_txt,R.string.frameHeight_notinrange));
@@ -386,14 +418,12 @@ public class AdvancedOptionActivity extends BaseActivity {
             mYfh_right.setOnEditorActionListener(new Validation1(activity, mYfh_right, mBvd_right, mYfh_right, 0.0, 50.0,mCentrationdata_error_txt,R.string.yfh_notinrange));
             mBvd_right.setOnEditorActionListener(new Validation1(activity, mBvd_right, mBvd_right, mBvd_right, 0.0, 50.0,mCentrationdata_error_txt,R.string.bvd_notinrange));
 
-
             mFramelength_left.getText().clear();
             mFrameheight_left.getText().clear();
             mDbl_left.getText().clear();
             mPdz_left.getText().clear();
             mYfh_left.getText().clear();
             mBvd_left.getText().clear();
-
 
             mFramelength_left.setEnabled(false);
             mFramelength_left.setBackground(getResources().getDrawable(R.drawable.hide));
@@ -461,11 +491,7 @@ public class AdvancedOptionActivity extends BaseActivity {
 //            centerRight.setChecked(false);
 //            centerRight.setEnabled(false);
         }
-
-
-
         else {
-
             /*Validation for Both*/
             mFramelength_right.setOnFocusChangeListener(new RangesDisplay1(activity,mFramedata_valuessteps, R.string.values_framelength,mFramelength_right,mFramelength_left, 30.0,80.0,mFramedata_error_txt,R.string.framelength_notinrange));
             mFrameheight_right.setOnFocusChangeListener(new RangesDisplay1(activity,mFramedata_valuessteps, R.string.values_frameheight,mFrameheight_right,mFrameheight_left, 15.0,65.0,mFramedata_error_txt,R.string.frameHeight_notinrange));
@@ -480,8 +506,4 @@ public class AdvancedOptionActivity extends BaseActivity {
             mPdz_right.setOnEditorActionListener(new Validation1(activity, mPdz_right, mYfh_right, mPdz_left, 0.0, 50.0,mFramedata_error_txt,R.string.pdz_notinrange));
             mYfh_right.setOnEditorActionListener(new Validation1(activity, mYfh_right, mBvd_right, mYfh_left, 0.0, 50.0,mFramedata_error_txt,R.string.yfh_notinrange));
             mBvd_right.setOnEditorActionListener(new Validation1(activity, mBvd_right, mBvd_right, mBvd_left, 0.0, 50.0,mFramedata_error_txt,R.string.bvd_notinrange));
-        }
-
-
-    }
-}
+        }}}

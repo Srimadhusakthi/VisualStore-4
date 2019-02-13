@@ -270,7 +270,9 @@ public class MainActivity extends BaseActivity
 
 
         Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_selected_portfolio_id,"");
-        Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_selected_portfolio_name,"");
+//        Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_selected_portfolio_name,"");
+        Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_selected_portfolio_name,getResources().getString(R.string.zeiss));
+
         Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_typename_right,"");
         Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_typename_left,"");
         Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_typecode_right,"");

@@ -194,7 +194,7 @@
     <string name="values_dbl">Value from 0.1 to 40 in 0.1 steps.</string>
 
     <!--Internet Connection-->
-    <string name="interntconnectionalert">Plese check your connection</string>
+    <string name="interntconnectionalert">Please check your connection</string>
 
     <!--Employee-->
     <string name="employeenamenotempty">Employee name should not be empty</string>

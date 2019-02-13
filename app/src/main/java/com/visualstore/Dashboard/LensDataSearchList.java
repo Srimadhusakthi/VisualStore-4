@@ -123,7 +123,15 @@ public class LensDataSearchList extends BaseActivity {
             getSupportActionBar().setTitle(getResources().getString(R.string.lenstype));
 
         }  else if(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_type_act,"").equals("3")) {
-            onGetCoating(Sharedpreference.getSharedprefernce(activity,Sharedpreference.mlens_coating_id,""));
+            String mCoatingValue;
+            if(BaseActivity.mLensRefractiontxt.equals("both")){
+                mCoatingValue = Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typecode_right,"");
+            }else  if(BaseActivity.mLensRefractiontxt.equals("right")){
+                mCoatingValue = Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typecode_right,"");
+            } else{
+                mCoatingValue = Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typecode_left,"");
+            }
+            onGetCoating(mCoatingValue);
             getSupportActionBar().setTitle(getResources().getString(R.string.coating));
             onSearchCoatingView();
         }
@@ -186,7 +194,7 @@ public class LensDataSearchList extends BaseActivity {
 
     private void getLensTypeList(String mvalues) {
         mLenTypeList = new ArrayList<>();
-        if(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_selected_portfolio_id,"").equals("0")){
+        if(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_selected_portfolio_name,"").equals(getResources().getString(R.string.zeiss))){
              mValue  = "1";
         }else{
              mValue  = "2";

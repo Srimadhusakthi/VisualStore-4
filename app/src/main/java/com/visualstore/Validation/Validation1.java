@@ -41,22 +41,15 @@ public class Validation1 implements TextView.OnEditorActionListener {
             Double i = Double.valueOf(edit1.getText().toString());
 
             if (i > max) {
-
                 edit1.setBackground(context.getResources().getDrawable(R.drawable.error_bg));
                 errorView.setText(msg);
-
             } else if (i < min) {
-
                 edit1.setBackground(context.getResources().getDrawable(R.drawable.error_bg));
                 errorView.setText(msg);
             } else {
-
                 edit2.requestFocus();
                 errorView.setText("");
-//                String format=String.format("%.2f", i);
                 edit3.setText(edit1.getText().toString().trim());
-//                edit1.setText(format);
-//                System.out.println("value with decimal"+String.format("%.2f", i));
                 edit1.setBackground(context.getResources().getDrawable(R.drawable.rectangle));
             }
 

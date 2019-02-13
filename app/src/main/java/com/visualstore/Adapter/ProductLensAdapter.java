@@ -48,14 +48,6 @@ public class ProductLensAdapter extends RecyclerView.Adapter<ProductLensAdapter.
         mProdcutHolder.mProductListLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* if(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typename_id,"").equals("2")){
-                    Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_typename_right,model.getName());
-                    Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_typecode_right,model.getLens_code());
-                } else{
-                    Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_typename_left,model.getName());
-                    Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_typecode_left,model.getLens_code());
-                }*/
-
                 if(Sharedpreference.getSharedprefernce(activity,Sharedpreference.both_single,"").equals("single")){
                     if(Sharedpreference.getSharedprefernce(activity,Sharedpreference.lens_typename_id,"").equals("2")){
                         Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_typename_right,model.getName());
@@ -64,10 +56,10 @@ public class ProductLensAdapter extends RecyclerView.Adapter<ProductLensAdapter.
                         Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_typename_left,model.getName());
                         Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_typecode_left,model.getLens_code());
                     }
+
                 } else if(Sharedpreference.getSharedprefernce(activity,Sharedpreference.both_single,"").equals("both")){
                     Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_typename_right,model.getName());
                     Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_typename_left,model.getName());
-
                     Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_typecode_right,model.getLens_code());
                     Sharedpreference.onStorePreferences(activity,Sharedpreference.lens_typecode_left,model.getLens_code());
                 }
