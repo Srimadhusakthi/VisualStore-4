@@ -23,8 +23,6 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.visualstore.Adapter.CustomOrderAdapter;
@@ -1216,8 +1214,6 @@ public class LensOrdering extends BaseActivity  {
     @OnClick(R.id.orderreview)
     protected  void onOrderreview(){
 
-        Toast.makeText(activity,"-"+BaseActivity.mLensRefractiontxt,Toast.LENGTH_SHORT).show();
-
         if(BaseActivity.mLensRefractiontxt.equals("both")){
             onConditionBoth();
         } else if(BaseActivity.mLensRefractiontxt.equals("right")){
@@ -1240,7 +1236,7 @@ public class LensOrdering extends BaseActivity  {
             onSnackBar(mLensordering_parent_layout, getResources().getString(R.string.plsenter) + " " + getResources().getString(R.string.axis));
         }  else if (BaseActivity.mLensRefractiontxt.equals("both") && !mCyclind_left.getText().toString().trim().isEmpty() && mAxis_left.getText().toString().trim().isEmpty()) {
             onSnackBar(mLensordering_parent_layout, getResources().getString(R.string.plsenter) + " " + getResources().getString(R.string.axis));
-        } else if (BaseActivity.mLensRefractiontxt.equals("both") && mLenstype_list_right.getText().toString().isEmpty() &&  mLenstype_list_left.getText().toString().isEmpty()){
+        } else if (BaseActivity.mLensRefractiontxt.equals("both") && mLenstype_list_right.getText().toString().isEmpty() ||  mLenstype_list_left.getText().toString().isEmpty()){
             onSnackBar(mLensordering_parent_layout, getResources().getString(R.string.plsenter) + " " + getResources().getString(R.string.lenstype));
         }
         else {
@@ -1290,7 +1286,7 @@ public class LensOrdering extends BaseActivity  {
             onSnackBar(mLensordering_parent_layout, getResources().getString(R.string.plsenter) + " " + getResources().getString(R.string.axis));
         }  else if (BaseActivity.mLensRefractiontxt.equals("both") && !mCyclind_left.getText().toString().trim().isEmpty() && mAxis_left.getText().toString().trim().isEmpty()) {
             onSnackBar(mLensordering_parent_layout, getResources().getString(R.string.plsenter) + " " + getResources().getString(R.string.axis));
-        } else if (BaseActivity.mLensRefractiontxt.equals("both") && mLenstype_list_right.getText().toString().isEmpty() &&  mLenstype_list_left.getText().toString().isEmpty()){
+        } else if (BaseActivity.mLensRefractiontxt.equals("both") && mLenstype_list_right.getText().toString().isEmpty() ||  mLenstype_list_left.getText().toString().isEmpty()){
             onSnackBar(mLensordering_parent_layout, getResources().getString(R.string.plsenter) + " " + getResources().getString(R.string.lenstype));
         }
         else {
