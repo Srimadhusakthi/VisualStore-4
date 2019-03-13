@@ -15,6 +15,7 @@ import com.visualstore.Model.LensEditData;
 import com.visualstore.Model.LensOrderModel;
 import com.visualstore.Model.LoginCredential;
 import com.visualstore.Model.LoginResultData;
+import com.visualstore.Model.MyProfileModel;
 import com.visualstore.Model.PlaceOrderModel;
 import com.visualstore.Model.ProductlensModel;
 import com.visualstore.Model.Result;
@@ -39,10 +40,8 @@ public interface RetroServices {
     @POST("login_app")
     Observable<LoginResultData> onLogin(@Body LoginCredential loginCredential);
 
-    /*user signup*/
-//    @POST("app_signup")
-//    Observable<LO>
-
+    @GET("my_profile")
+    Observable<MyProfileModel> onGetProfile();
 
     /*Get Order API*/
     @GET("get_orders")

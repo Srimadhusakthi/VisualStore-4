@@ -57,7 +57,7 @@ public class LoginActivity extends BaseActivity {
     private Activity activity;
     private AwesomeValidation awesomeValidation;
     private RetroServices mRetroservice;
-    private RetroTokenService mRetroserviceToken;
+//    private RetroTokenService mRetroserviceToken;
 
     @BindView(R.id.email)
     protected AppCompatAutoCompleteTextView mUserEmail;
@@ -80,7 +80,7 @@ public class LoginActivity extends BaseActivity {
         activity = LoginActivity.this;
         awesomeValidation = new AwesomeValidation(ValidationStyle.TEXT_INPUT_LAYOUT);
         mRetroservice = Retro.get().createWithOutToken(RetroServices.class);
-        mRetroserviceToken = Retro.get().createWithToken(RetroTokenService.class);
+//        mRetroserviceToken = Retro.get().createWithToken(RetroTokenService.class);
         addValidationtoviews();
         progressDialog = new ProgressDialog(activity);
         progressDialog.setCancelable(false);
@@ -150,7 +150,7 @@ public class LoginActivity extends BaseActivity {
                           Sharedpreference.onStorePreferences(activity,Sharedpreference.admin_id,loginResult.getData().getId());
                           Sharedpreference.onStorePreferences(activity,Sharedpreference.log_inauth,loginResult.getData().getAuth_id());
                           getLensTypeList();
-//                          onSnackBar(mLogin_parent_layout,""+loginResult.getMessage());
+                          onGetProfile();
                       }
                   }
 
@@ -242,6 +242,38 @@ public class LoginActivity extends BaseActivity {
 
     }
 
+    private void onGetProfile(){
+        mRetroservice.onGetProfile().
+                subscribeOn(Schedulers.io()).
+                observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<MyProfileModel>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(MyProfileModel myProfileModel) {
+                Log.d("Profile",myProfileModel.getMessage().toString());
+
+
+//                Sharedpreference.onStorePreferences(activity,Sharedpreference.name,myProfileModel.getData().getName());
+//                Sharedpreference.onStorePreferences(activity,Sharedpreference.email,myProfileModel.getData().getEmail());
+//                Sharedpreference.onStorePreferences(activity,Sharedpreference.phone,myProfileModel.getData().getPhone());
+//                Sharedpreference.onStorePreferences(activity,Sharedpreference.username,myProfileModel.getData().getUsername());
+//                Sharedpreference.onStorePreferences(activity,Sharedpreference.logged_in,myProfileModel.getData().getLogin_code());
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+            }
+        });
+    }
 
 
 }

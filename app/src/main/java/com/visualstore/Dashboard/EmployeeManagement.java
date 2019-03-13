@@ -2,11 +2,9 @@ package com.visualstore.Dashboard;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatEditText;
@@ -18,14 +16,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.visualstore.Adapter.EmployeeAdapter;
-import com.visualstore.Adapter.MoviesAdapter;
 import com.visualstore.BaseActivity;
 import com.visualstore.Model.DeletEmployeeModel;
 import com.visualstore.Model.EmployeeAddNameModel;
@@ -36,13 +30,10 @@ import com.visualstore.Model.EmployeeUpdateNameModel;
 import com.visualstore.Model.Result;
 import com.visualstore.R;
 import com.visualstore.Retrfofit.Retro;
-import com.visualstore.Retrfofit.RetroResult;
 import com.visualstore.Retrfofit.RetroServices;
-import com.visualstore.Retrfofit.RetroTokenService;
 import com.visualstore.Sharedpreference.Sharedpreference;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

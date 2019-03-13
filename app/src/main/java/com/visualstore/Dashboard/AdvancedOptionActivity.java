@@ -299,6 +299,7 @@ public class AdvancedOptionActivity extends BaseActivity {
     }
 
     private void onUploadValues(){
+        onValidation();
         BaseActivity.mAdvance = 1;
         Sharedpreference.onStorePreferences(activity,Sharedpreference.panto_angle,mPantoangle.getText().toString().trim());
         Sharedpreference.onStorePreferences(activity,Sharedpreference.framefit,mFramefit.getText().toString().trim());
@@ -444,8 +445,6 @@ public class AdvancedOptionActivity extends BaseActivity {
             mYfh_left.setText("");
             mBvd_left.setText("");
 
-//            centerLeft.setChecked(false);
-//            centerLeft.setEnabled(false);
         }else if(side.equals("left")){
 
 

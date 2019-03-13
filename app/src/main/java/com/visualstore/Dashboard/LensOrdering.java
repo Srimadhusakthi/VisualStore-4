@@ -267,6 +267,8 @@ public class LensOrdering extends BaseActivity  {
         mLeftside.setChecked(true);
         mRightside.setChecked(true);
         mSingle.setChecked(false);
+        mLeftside.setEnabled(false);
+        mRightside.setEnabled(false);
         onRefraction();
         onRefractionBoth();
         Sharedpreference.onStorePreferences(activity,Sharedpreference.both_single,"both");
@@ -422,12 +424,13 @@ public class LensOrdering extends BaseActivity  {
                         mRightside.setEnabled(true);
                         break;
                     case R.id.both:
-//                        mLeftside.setVisibility(View.INVISIBLE);
-//                        mRightside.setVisibility(View.INVISIBLE);
+                        mLeftside.setVisibility(View.INVISIBLE);
+                        mRightside.setVisibility(View.INVISIBLE);
                         mLeftside.setEnabled(false);
                         mRightside.setEnabled(false);
                         BaseActivity.mLensRefractiontxt = "both";
                         onEnableBoth();
+
                         onDisplayAllSide(mLenstype_list_left,mLenstype_left_header,mDiameter_list_left,mDiameter_left,
                                 mLenstype_list_right,mLenstype_right_header,mDiameter_list_right,mDiameter_right);
                         mLenstype_list_left.setClickable(false);
@@ -461,8 +464,12 @@ public class LensOrdering extends BaseActivity  {
                         mRightside.setChecked(false);
                         mLeftside.setChecked(false);
                         onEnableBothEdit();
+                        mLeftside.setVisibility(View.VISIBLE);
+                        mRightside.setVisibility(View.VISIBLE);
                         break;
                     case R.id.both:
+                        mLeftside.setVisibility(View.INVISIBLE);
+                        mRightside.setVisibility(View.INVISIBLE);
                         BaseActivity.mLensRefractiontxt = "both";
                         mRightside.setEnabled(false);
                         mLeftside.setEnabled(false);

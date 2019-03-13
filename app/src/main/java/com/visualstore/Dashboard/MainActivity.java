@@ -36,6 +36,7 @@ import com.visualstore.Model.LogOutModel;
 import com.visualstore.Model.MyProfileModel;
 import com.visualstore.Model.Result;
 import com.visualstore.Model.StoreId;
+import com.visualstore.OnBoarding.SplashScreen;
 import com.visualstore.R;
 import com.visualstore.Retrfofit.Retro;
 import com.visualstore.Retrfofit.RetroServices;
@@ -108,10 +109,13 @@ public class MainActivity extends BaseActivity
 
         /*Retro Serivce connection establish*/
         mRetroTokenService = Retro.get().createWithToken(RetroTokenService.class);
-//        onGetProfile();
         sqLiteDatabase = new DatabaseHelper(activity);
         mTint = new DatabaseHelperTint(activity);
         onProgress(R.id.custom_progressbar,activity);
+
+        useremail.setText(Sharedpreference.getSharedprefernce(activity,Sharedpreference.email,""));
+        usermobilenumber.setText(Sharedpreference.getSharedprefernce(activity,Sharedpreference.phone,""));
+        username.setText(Sharedpreference.getSharedprefernce(activity,Sharedpreference.name,""));
     }
 
     @Override
@@ -381,7 +385,14 @@ public class MainActivity extends BaseActivity
                     @Override
                     public void onError(Throwable e) {
 
-                        onToast(activity,e.getMessage());
+                        if(isNetworkConnected(activity)){
+                            activity.finish();
+                            mTint.onDelete();
+                            sqLiteDatabase.onDelete();
+                            Sharedpreference.onDeleteAllValues(activity);
+//                            startActivity(new Intent(activity, SplashScreen.class));
+                        }
+
                     }
 
                     @Override
@@ -391,40 +402,7 @@ public class MainActivity extends BaseActivity
                 });
     }
 
-    private void onGetProfile(){
-        mRetroTokenService.onGetProfile().
-                subscribeOn(Schedulers.io()).
-                observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<MyProfileModel>() {
-            @Override
-            public void onSubscribe(Disposable d) {
 
-            }
-
-            @Override
-            public void onNext(MyProfileModel myProfileModel) {
-
-
-                          Sharedpreference.onStorePreferences(activity,Sharedpreference.name,myProfileModel.getData().getName());
-                          Sharedpreference.onStorePreferences(activity,Sharedpreference.email,myProfileModel.getData().getEmail());
-                          Sharedpreference.onStorePreferences(activity,Sharedpreference.phone,myProfileModel.getData().getPhone());
-                          Sharedpreference.onStorePreferences(activity,Sharedpreference.username,myProfileModel.getData().getUsername());
-                          Sharedpreference.onStorePreferences(activity,Sharedpreference.logged_in,myProfileModel.getData().getLogin_code());
-
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onComplete() {
-                useremail.setText(Sharedpreference.getSharedprefernce(activity,Sharedpreference.email,""));
-                usermobilenumber.setText(Sharedpreference.getSharedprefernce(activity,Sharedpreference.phone,""));
-                username.setText(Sharedpreference.getSharedprefernce(activity,Sharedpreference.name,""));
-            }
-        });
-    }
 
 
     private void onLogoutAlert(){

@@ -31,24 +31,31 @@
             android:name=".OnBoarding.LoginActivity"
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Dashboard.MainActivity"
             android:label="@string/app_name"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
         <activity android:name=".Dashboard.Home"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity android:name=".Dashboard.OrderActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Dashboard.CartActivity"
             android:label="@string/app_name"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
         <activity android:name=".Dashboard.NewOrderActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity android:name=".Dashboard.ContactInformation"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
         <activity android:name=".Dashboard.EmployeeManagement"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity android:name=".Dashboard.ChatActivity"
             android:screenOrientation="portrait" />

@@ -21,8 +21,6 @@ public interface RetroTokenService {
     @POST("logout_app")
     Observable<Result>   onUserLogout(@Body LogOutModel logOutModel);
 
-    @GET("my_profile")
-    Observable<MyProfileModel> onGetProfile();
 
 
 
