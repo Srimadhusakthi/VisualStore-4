@@ -23,7 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Retro {
 
     private static String mTestURl = "";
-    private static String mProductionURL = "http://103.21.59.241/carl_visustore/master_api/my_profile";
+    private static String mProductionURL = "http://103.21.59.241/carl_visustore/master_api/";
 //    private static String mProductionURL = "http://45.33.108.121/carl_visustore/index.php/master_api/login_app";
     public static Retro instance = new Retro();
     private static Retrofit.Builder builder;

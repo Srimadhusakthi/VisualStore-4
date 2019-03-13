@@ -23,6 +23,8 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.visualstore.Adapter.CustomOrderAdapter;
@@ -1213,6 +1215,8 @@ public class LensOrdering extends BaseActivity  {
 
     @OnClick(R.id.orderreview)
     protected  void onOrderreview(){
+
+        Toast.makeText(activity,"-"+BaseActivity.mLensRefractiontxt,Toast.LENGTH_SHORT).show();
 
         if(BaseActivity.mLensRefractiontxt.equals("both")){
             onConditionBoth();
